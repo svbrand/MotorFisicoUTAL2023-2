@@ -171,3 +171,13 @@ C:\UTalca\FisicaVJ2023-2\20230905\CanvasDrawing\CanvasDrawing\obj\Debug\CanvasDr
 C:\UTalca\FisicaVJ2023-2\20230905\CanvasDrawing\CanvasDrawing\obj\Debug\CanvasDrawing.csproj.CoreCompileInputs.cache
 C:\UTalca\FisicaVJ2023-2\20230905\CanvasDrawing\CanvasDrawing\obj\Debug\CanvasDrawing.exe
 C:\UTalca\FisicaVJ2023-2\20230905\CanvasDrawing\CanvasDrawing\obj\Debug\CanvasDrawing.pdb
+C:\Users\suniv\2023\FisicaVideojuegos\MotorFisicoGit\MotorFisicoUTAL2023-2\CanvasDrawing\CanvasDrawing\bin\Debug\CanvasDrawing.exe.config
+C:\Users\suniv\2023\FisicaVideojuegos\MotorFisicoGit\MotorFisicoUTAL2023-2\CanvasDrawing\CanvasDrawing\bin\Debug\CanvasDrawing.exe
+C:\Users\suniv\2023\FisicaVideojuegos\MotorFisicoGit\MotorFisicoUTAL2023-2\CanvasDrawing\CanvasDrawing\bin\Debug\CanvasDrawing.pdb
+C:\Users\suniv\2023\FisicaVideojuegos\MotorFisicoGit\MotorFisicoUTAL2023-2\CanvasDrawing\CanvasDrawing\obj\Debug\CanvasDrawing.csproj.AssemblyReference.cache
+C:\Users\suniv\2023\FisicaVideojuegos\MotorFisicoGit\MotorFisicoUTAL2023-2\CanvasDrawing\CanvasDrawing\obj\Debug\CanvasDrawing.Form1.resources
+C:\Users\suniv\2023\FisicaVideojuegos\MotorFisicoGit\MotorFisicoUTAL2023-2\CanvasDrawing\CanvasDrawing\obj\Debug\CanvasDrawing.Properties.Resources.resources
+C:\Users\suniv\2023\FisicaVideojuegos\MotorFisicoGit\MotorFisicoUTAL2023-2\CanvasDrawing\CanvasDrawing\obj\Debug\CanvasDrawing.csproj.GenerateResource.cache
+C:\Users\suniv\2023\FisicaVideojuegos\MotorFisicoGit\MotorFisicoUTAL2023-2\CanvasDrawing\CanvasDrawing\obj\Debug\CanvasDrawing.csproj.CoreCompileInputs.cache
+C:\Users\suniv\2023\FisicaVideojuegos\MotorFisicoGit\MotorFisicoUTAL2023-2\CanvasDrawing\CanvasDrawing\obj\Debug\CanvasDrawing.exe
+C:\Users\suniv\2023\FisicaVideojuegos\MotorFisicoGit\MotorFisicoUTAL2023-2\CanvasDrawing\CanvasDrawing\obj\Debug\CanvasDrawing.pdb

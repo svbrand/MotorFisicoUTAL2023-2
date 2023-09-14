@@ -56,25 +56,35 @@ namespace CanvasDrawing.UtalEngine2D_2023_1.Physics
                     corners[1] = new Vector2(pos.x + otherC.radius, pos.y);
                     corners[2] = new Vector2(pos.x, pos.y + otherC.radius);
                     corners[3] = new Vector2(pos.x - otherC.radius, pos.y);
-                    
+                    List<Collision> collisionCandidates = new List<Collision>();
                     foreach (Vector2 v in corners)
                     {
+                        Collision localCollision = new Collision();
                         if (CheckPointInRec(v, out closestPoint))
                         {
                             //find closest border, it's the closestPoint
-                            collision.CollisionPoint = (closestPoint+v)*0.5f;
+                            localCollision.CollisionPoint = (closestPoint+v)*0.5f;
                             if (!otherC.rigidbody.isStatic)
                             {
-                                collision.OffsetVectorOther = (closestPoint - v);
-                                otherC.rigidbody.transform.position += collision.OffsetVectorOther;
+                                localCollision.OffsetVectorOther = (closestPoint - v);
+                                localCollision.CollisionPoint = closestPoint;
+                                otherC.rigidbody.transform.position += localCollision.OffsetVectorOther;
                             }
                             if (!rigidbody.isStatic)
                             {
-                                collision.OffsetVector = v - closestPoint;
-                                rigidbody.transform.position += collision.OffsetVector;
+                                localCollision.OffsetVector = v - closestPoint;
+                                rigidbody.transform.position += localCollision.OffsetVector;
                             }
-                            return true;
+                            collisionCandidates.Add(localCollision);
+                            //return true;
                         }
+                    }
+                    if (collisionCandidates.Count > 0)
+                    {
+                        //No se cual elegir
+                        collision = collisionCandidates[0];
+                        Console.WriteLine("Colisiones Detectadas " + collisionCandidates.Count);
+                        return true;
                     }
                 }
 

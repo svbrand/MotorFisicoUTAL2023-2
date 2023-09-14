@@ -167,18 +167,18 @@ namespace CanvasDrawing.UtalEngine2D_2023_1.Physics
             //Normal force
             if (rb1.Velocity.y * PhysicsEngine.gravity.y > 0)
             {
-                rb1.force -= PhysicsEngine.gravity * mass * Time.deltaTime;
+                //rb1.force -= PhysicsEngine.gravity * mass * Time.deltaTime;
                 rb1.stopGravityThisFrame = true;
                 if (rb1.Velocity.SquareMagnitude() < 1f)
                 {
                     if (rb1.Velocity.y * PhysicsEngine.gravity.y > 0)
                     {
-                        rb1.stopGravityThisFrame = true;
+                        //rb1.stopGravityThisFrame = true;
                     }
                     return;
                 }
             }
-            if (toOtherDirection.y * rb1.Velocity.y > 0 && Math.Abs(toOtherDirection.x) < Math.Abs(toOtherDirection.y))
+            if (toOtherDirection.y * rb1.Velocity.y > 0)// && Math.Abs(toOtherDirection.x) < Math.Abs(toOtherDirection.y))
             {
                 rb1.Velocity.y *= -1f;
             }
