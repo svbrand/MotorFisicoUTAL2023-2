@@ -1,0 +1,10 @@
+C:\UTalca\Programacion2D_2023-1\20230523CanvasDrawing\CanvasDrawing\bin\Release\CanvasDrawing.exe.config
+C:\UTalca\Programacion2D_2023-1\20230523CanvasDrawing\CanvasDrawing\bin\Release\CanvasDrawing.exe
+C:\UTalca\Programacion2D_2023-1\20230523CanvasDrawing\CanvasDrawing\bin\Release\CanvasDrawing.pdb
+C:\UTalca\Programacion2D_2023-1\20230523CanvasDrawing\CanvasDrawing\obj\Release\CanvasDrawing.Form1.resources
+C:\UTalca\Programacion2D_2023-1\20230523CanvasDrawing\CanvasDrawing\obj\Release\CanvasDrawing.Properties.Resources.resources
+C:\UTalca\Programacion2D_2023-1\20230523CanvasDrawing\CanvasDrawing\obj\Release\CanvasDrawing.csproj.GenerateResource.cache
+C:\UTalca\Programacion2D_2023-1\20230523CanvasDrawing\CanvasDrawing\obj\Release\CanvasDrawing.csproj.CoreCompileInputs.cache
+C:\UTalca\Programacion2D_2023-1\20230523CanvasDrawing\CanvasDrawing\obj\Release\CanvasDrawing.exe
+C:\UTalca\Programacion2D_2023-1\20230523CanvasDrawing\CanvasDrawing\obj\Release\CanvasDrawing.pdb
+C:\UTalca\Programacion2D_2023-1\20230523CanvasDrawing\CanvasDrawing\obj\Release\CanvasDrawing.csproj.AssemblyReference.cache
