@@ -69,12 +69,18 @@ namespace CanvasDrawing.UtalEngine2D_2023_1.Physics
                             {
                                 localCollision.OffsetVectorOther = (closestPoint - v);
                                 localCollision.CollisionPoint = closestPoint;
-                                otherC.rigidbody.transform.position += localCollision.OffsetVectorOther;
+                                if (otherC.isSolid && isSolid)
+                                {
+                                    otherC.rigidbody.transform.position += localCollision.OffsetVectorOther;
+                                }
                             }
                             if (!rigidbody.isStatic)
                             {
                                 localCollision.OffsetVector = v - closestPoint;
-                                rigidbody.transform.position += localCollision.OffsetVector;
+                                if (isSolid)
+                                {
+                                    rigidbody.transform.position += localCollision.OffsetVector;
+                                }
                             }
                             collisionCandidates.Add(localCollision);
                             //return true;
@@ -126,7 +132,10 @@ namespace CanvasDrawing.UtalEngine2D_2023_1.Physics
                         if (rigidbody.isStatic)
                         {
                             collision.OffsetVectorOther = collision.CollisionPoint - closestPoint;
-                            rigidbody.transform.position += collision.OffsetVectorOther;
+                            if (isSolid)
+                            {
+                                rigidbody.transform.position += collision.OffsetVectorOther;
+                            }
                         }
                         return true;
                     }

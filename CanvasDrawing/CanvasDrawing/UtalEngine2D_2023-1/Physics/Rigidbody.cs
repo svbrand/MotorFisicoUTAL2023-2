@@ -97,7 +97,7 @@ namespace CanvasDrawing.UtalEngine2D_2023_1.Physics
                             {
                                 checkSecondColl = true;
                                 //otherC.rigidbody.transform.position = otherC.rigidbody.lastPos;
-                                if (isStatic)
+                                if (isStatic && colliders[0].isSolid)
                                 {
                                     CheckCollisionAgainstStatic(otherRigid, collision);                                    
                                     //otherC.rigidbody.Velocity = toOtherDirection.Normalized() * otherC.rigidbody.Velocity.Magnitude() * 0.9f;
@@ -163,7 +163,10 @@ namespace CanvasDrawing.UtalEngine2D_2023_1.Physics
         }
         public void CheckCollisionAgainstStatic(Rigidbody rb1, Collision collision)
         {
-
+            if (!rb1.colliders[0].isSolid)
+            {
+                return;
+            }
             if (collision.CollisionPoint.x == 0 && collision.CollisionPoint.y == 0)
             {
                 //Console.WriteLine("Bad Collision Point");
