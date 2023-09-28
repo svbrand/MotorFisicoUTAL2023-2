@@ -16,6 +16,7 @@ namespace CanvasDrawing.UtalEngine2D_2023_1.Physics
 
         public override bool CheckCollision(Collider other, out Collision collision)
         {
+            Vector2 sizeScaled = new Vector2(this.size.x * rigidbody.transform.scale.x, this.size.y * rigidbody.transform.scale.y);
             collision = new Collision();
             Vector2 closestPoint;
             CircleCollider otherC = other as CircleCollider;
@@ -25,10 +26,10 @@ namespace CanvasDrawing.UtalEngine2D_2023_1.Physics
                 {
                     Vector2[] corners = new Vector2[4];
                     Vector2 pos = rigidbody.transform.position;
-                    corners[0] = new Vector2(pos.x - size.x / 2, pos.y - size.y / 2);
-                    corners[1] = new Vector2(pos.x + size.x / 2, pos.y - size.y / 2);
-                    corners[2] = new Vector2(pos.x - size.x / 2, pos.y + size.y / 2);
-                    corners[3] = new Vector2(pos.x + size.x / 2, pos.y + size.y / 2);
+                    corners[0] = new Vector2(pos.x - sizeScaled.x / 2, pos.y - sizeScaled.y / 2);
+                    corners[1] = new Vector2(pos.x + sizeScaled.x / 2, pos.y - sizeScaled.y / 2);
+                    corners[2] = new Vector2(pos.x - sizeScaled.x / 2, pos.y + sizeScaled.y / 2);
+                    corners[3] = new Vector2(pos.x + sizeScaled.x / 2, pos.y + sizeScaled.y / 2);
                     foreach (Vector2 v in corners)
                     {
                         Vector2 ClosestPointToBorder;
@@ -83,7 +84,7 @@ namespace CanvasDrawing.UtalEngine2D_2023_1.Physics
                     {
                         //No se cual elegir
                         collision = collisionCandidates[0];
-                        Console.WriteLine("Colisiones Detectadas " + collisionCandidates.Count);
+                        //Console.WriteLine("Colisiones Detectadas " + collisionCandidates.Count);
                         return true;
                     }
                 }
@@ -96,10 +97,10 @@ namespace CanvasDrawing.UtalEngine2D_2023_1.Physics
             {
                 Vector2[] corners = new Vector2[4];
                 Vector2 pos = rigidbody.transform.position;
-                corners[0] = new Vector2(pos.x - size.x / 2, pos.y - size.y / 2);
-                corners[1] = new Vector2(pos.x + size.x / 2, pos.y - size.y / 2);
-                corners[2] = new Vector2(pos.x - size.x / 2, pos.y + size.y / 2);
-                corners[3] = new Vector2(pos.x + size.x / 2, pos.y + size.y / 2);
+                corners[0] = new Vector2(pos.x - sizeScaled.x / 2, pos.y - sizeScaled.y / 2);
+                corners[1] = new Vector2(pos.x + sizeScaled.x / 2, pos.y - sizeScaled.y / 2);
+                corners[2] = new Vector2(pos.x - sizeScaled.x / 2, pos.y + sizeScaled.y / 2);
+                corners[3] = new Vector2(pos.x + sizeScaled.x / 2, pos.y + sizeScaled.y / 2);
                 foreach (Vector2 v in corners)
                 {
                     if (otherRC.CheckPointInRec(v, out closestPoint))
@@ -136,16 +137,17 @@ namespace CanvasDrawing.UtalEngine2D_2023_1.Physics
         }
         public bool CheckPointInRec(Vector2 point, out Vector2 pointMovedToClosestBorder)
         {
+            Vector2 sizeScaled = new Vector2(this.size.x * rigidbody.transform.scale.x, this.size.y * rigidbody.transform.scale.y);
             Vector2 center = rigidbody.transform.position;
-            if(point.x > center.x-size.x/2 && point.x < center.x + size.x / 2 &&
-               point.y > center.y - size.y / 2 && point.y < center.y + size.y / 2)
+            if(point.x > center.x-sizeScaled.x/2 && point.x < center.x + sizeScaled.x / 2 &&
+               point.y > center.y - sizeScaled.y / 2 && point.y < center.y + sizeScaled.y / 2)
             {
                 List<Vector2> borderPoints = new List<Vector2>
                 {
-                    new Vector2(center.x - size.x / 2, point.y),
-                    new Vector2(center.x + size.x / 2, point.y),
-                    new Vector2(point.x, center.y + size.y / 2),
-                    new Vector2(point.x, center.y - size.y / 2)
+                    new Vector2(center.x - sizeScaled.x / 2, point.y),
+                    new Vector2(center.x + sizeScaled.x / 2, point.y),
+                    new Vector2(point.x, center.y + sizeScaled.y / 2),
+                    new Vector2(point.x, center.y - sizeScaled.y / 2)
                 };
                 float distancesSquared = 0;
                 Vector2 bp1 = borderPoints[0];

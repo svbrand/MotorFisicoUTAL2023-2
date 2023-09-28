@@ -134,16 +134,16 @@ namespace CanvasDrawing.UtalEngine2D_2023_1
             {
                 float rotate = renderer.rotation - renderer.lastRot;
                 renderer.lastRot = renderer.rotation;
-                Point center = new Point((int)(renderer.size.x / 2), (int)(renderer.size.y / 2));
+                Point center = new Point((int)((renderer.size.x*transform.scale.x) / 2), (int)(renderer.size.y * transform.scale.y) / 2);
                 renderer.rotatedSprite = GameObjectManager.RotateImage(renderer.sprite, center, renderer.rotation);
             }
             if (!float.IsNaN(transform.position.x))
             {
                 graphics.DrawImage(renderer.rotatedSprite,
-                    (transform.position.x - camera.Position.x - renderer.size.x / 2) / camera.scale + xOffset,
-                    (transform.position.y - camera.Position.y - renderer.size.y / 2) / camera.scale + yOffset,
-                    renderer.size.x / camera.scale,
-                    renderer.size.y / camera.scale);
+                    (transform.position.x - camera.Position.x - renderer.size.x*transform.scale.x / 2) / camera.scale + xOffset,
+                    (transform.position.y - camera.Position.y - renderer.size.y * transform.scale.y / 2) / camera.scale + yOffset,
+                    renderer.size.x*transform.scale.x / camera.scale,
+                    renderer.size.y * transform.scale.y / camera.scale);
             }
         }
     }

@@ -27,6 +27,8 @@ namespace CanvasDrawing.Game
             //this.Speed = force;
             rigidbody.force += dir*force;
             this.rigidbody.mass = 10;
+            //transform.scale.y = 0.5f;
+            this.rigidbody.PreProcessingForce = PreProcessingForce;
             animationImages = new Image[5];
             animationImages[0] = newSprite;
             animationImages[1] = Properties.Resources.bala_01;
@@ -36,9 +38,13 @@ namespace CanvasDrawing.Game
         }
         public override void OnCollisionEnter(GameObject other, Collision collision)
         {
-            new GameObject(Properties.Resources.SmallSven, new Vector2(10, 10), false, false, collision.CollisionPoint.x, collision.CollisionPoint.y, 2f);            
+            //new GameObject(Properties.Resources.SmallSven, new Vector2(10, 10), false, false, collision.CollisionPoint.x, collision.CollisionPoint.y, 2f);            
         }
 
+        public Vector2 PreProcessingForce(Vector2 force)
+        {
+            return force / 2;
+        }
         public override void Update()
         {
             base.Update();

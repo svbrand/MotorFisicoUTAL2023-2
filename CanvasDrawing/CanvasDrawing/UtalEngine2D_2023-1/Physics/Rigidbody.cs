@@ -30,6 +30,11 @@ namespace CanvasDrawing.UtalEngine2D_2023_1.Physics
         public delegate Object GetOnCollisionObjectDelegate();
         public GetOnCollisionObjectDelegate GetOnCollisionObject;
 
+        public delegate Vector2 PreProcessingForceDelegate(Vector2 force);
+
+        public PreProcessingForceDelegate PreProcessingForce;
+
+
         public Rigidbody()
         {
             PhysicsEngine.allNewRigidbodies.Add(this);            
@@ -53,6 +58,10 @@ namespace CanvasDrawing.UtalEngine2D_2023_1.Physics
             if (isStatic)
             {
                 return;
+            }
+            if (PreProcessingForce != null)
+            {
+                force = PreProcessingForce(force);
             }
             Vector2 accel = force*(1/mass);
             force = new Vector2(0,0);
@@ -157,13 +166,13 @@ namespace CanvasDrawing.UtalEngine2D_2023_1.Physics
 
             if (collision.CollisionPoint.x == 0 && collision.CollisionPoint.y == 0)
             {
-                Console.WriteLine("Bad Collision Point");
+                //Console.WriteLine("Bad Collision Point");
                 return;
             }         
             Vector2 toOtherDirection = collision.CollisionPoint - rb1.transform.position;
-            Debug.WriteLine("Pos " + rb1.transform.position.x.ToString() + " - " + rb1.transform.position.y);
-            Debug.WriteLine("Collision Point " + collision.CollisionPoint.x.ToString() + " - " + collision.CollisionPoint.y);
-            Debug.WriteLine(toOtherDirection.x.ToString() + " - " + toOtherDirection.y);
+            //Debug.WriteLine("Pos " + rb1.transform.position.x.ToString() + " - " + rb1.transform.position.y);
+            //Debug.WriteLine("Collision Point " + collision.CollisionPoint.x.ToString() + " - " + collision.CollisionPoint.y);
+            //Debug.WriteLine(toOtherDirection.x.ToString() + " - " + toOtherDirection.y);
             //Normal force
             if (rb1.Velocity.y * PhysicsEngine.gravity.y > 0)
             {
